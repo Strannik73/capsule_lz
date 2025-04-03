@@ -4,10 +4,10 @@ import os
 
 
 
-def lgn(func):
-    def LGNM(*asd, **qwe):
+def func_lgn(func):
+    def LGNM(*args, **kwargs):
         usr_func = func
-        org = func(*asd, **qwe)
+        org = func(*args, **kwargs)
         usr_func_name = str(usr_func.__name__)
         usr_name = os.getlogin()
         time_act = str(datetime.now().time())
@@ -28,7 +28,7 @@ def lgn(func):
     
     return LGNM
 
-@lgn
+@func_lgn
 def pr():
     print('ВАШЕ ЛОГИРОВАНИЕ ПРОШЛО УСПЕШНО')
 pr()
